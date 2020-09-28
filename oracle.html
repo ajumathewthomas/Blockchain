@@ -198,7 +198,7 @@
 	}
 ]
         var contractaddress = '0xd7fbcFD8788B5Dbe976905da128a2a9879aaf1ae';
-        function blockchain_query() {
+        function block_details() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
             var query = document.getElementById("bc").value;
              var result = myContract.methods.blockchain(query).send(function (err, result) {
@@ -208,7 +208,7 @@
                
                 });
         }
-        function ipfs_query() {
+        function ipfs_details() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
             var ipfs = document.getElementById("hash").value;
              var result = myContract.methods.IPFS(ipfs).send(function (err, result) {
@@ -218,7 +218,7 @@
                
                 });
         }
-        function wolfram_query() {
+        function wolf_details() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
             var alpha = document.getElementById("wolf").value;
              var result = myContract.methods.WolframAlpha(alpha).send(function (err, result) {
@@ -228,7 +228,7 @@
                
                 });
         }
-        function url_query() {
+        function url_details() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
              var result = myContract.methods.url().send(function (err, result) {
                
@@ -237,7 +237,7 @@
                
                 });
         }
-        function computation_query() {
+        function comp_details() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
              var result = myContract.methods.computation().send(function (err, result) {
                
@@ -260,11 +260,11 @@
     <form>
 		<table style="width:30%"> 
             <tr>
-			<td>Blockchain Query:</td>
+			<td>Blockchain query:</td>
 			<td><input type="text" id="bc" name="bc1"></td>
 		  </tr>
 		  <tr>
-		  <td><input type="button" onclick="blockchain_query()" value="Send Query"></td>
+		  <td><input type="button" onclick="block_details()" value="Send Query"></td>
 		  </tr>
 		</table>
 		
@@ -273,11 +273,11 @@
         <form>
 		<table style="width:30%"> 
             <tr>
-			<td>IPS hash value:</td>
+			<td>IPFS hash value:</td>
 			<td><input type="text" id="hash" name="hash1"></td>
 		  </tr>
 		  <tr>
-		  <td><input type="button" onclick="ipfs_query()" value="Send Query"></td>
+		  <td><input type="button" onclick="ipfs_details()" value="Send Query"></td>
 		  </tr>
 		</table>
 		
@@ -290,7 +290,7 @@
 			<td><input type="text" id="wolf" name="wolf1"></td>
 		  </tr>
 		  <tr>
-		  <td><input type="button" onclick="wolfram_query()" value="Send Query"></td>
+		  <td><input type="button" onclick="wolf_details()" value="Send Query"></td>
 		  </tr>
 		</table>
 		
@@ -299,10 +299,10 @@
          <form>
 		<table style="width:25%"> 
             <tr>
-			<td>Send url query:</td>
+			<td>URL query:</td>
 		  </tr>
 		  <tr>
-		  <td><input type="button" onclick="url_query()" value="Send Query"></td>
+		  <td><input type="button" onclick="url_details()" value="Send Query"></td>
 		  </tr>
 		</table>
 		
@@ -311,10 +311,10 @@
          <form>
 		<table style="width:25%"> 
             <tr>
-			<td>Computation Query:</td>
+			<td>Computation query:</td>
 		  </tr>
 		  <tr>
-		  <td><input type="button" onclick="computation_query()" value="Send Query"></td>
+		  <td><input type="button" onclick="comp_details()" value="Send Query"></td>
 		  </tr>
 		</table>
 		

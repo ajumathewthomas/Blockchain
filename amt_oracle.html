@@ -197,7 +197,7 @@
 		"type": "function"
 	}
 ]
-        var contractaddress = '0xf3F953b438787CC21853b93ec07F1548A862A189';
+        var contractaddress = '0xd7fbcFD8788B5Dbe976905da128a2a9879aaf1ae';
         function blockchain_query() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
             var query = document.getElementById("bc").value;
@@ -246,7 +246,7 @@
                
                 });
         }
-         function get_result() {
+         function get_res() {
             var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '500000'});
              var result = myContract.methods.results().call(function (err, result) {
                
@@ -322,7 +322,7 @@
 	</form>
         <form>
 		<table style="width:25%">
-            <tr><td><input type="button" onclick="get_result()" value="Get Result"></td></tr>
+            <tr><td><input type="button" onclick="get_res()" value="Get Result"></td></tr>
 		  <tr>
 			<td>Result:</td>
 			<td><div id="get_result"></div></td>
